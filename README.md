@@ -80,7 +80,12 @@ Por último, decidimos implementar un algoritmo de BFS (Breadth-First Search) pa
 
 Grafo de prueba:
 
+
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture6.png" alt="UADE-Logo" width="400"/>
+
 Resultante:
+
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture6.png" alt="UADE-Logo" width="120"/>
 
 ## 4.	Conclusión
 
