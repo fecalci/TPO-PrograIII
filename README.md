@@ -85,7 +85,7 @@ Grafo de prueba:
 
 Resultante:
 
-<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture7.jpeg" alt="UADE-Logo" width="200"/>
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture7.jpeg" alt="UADE-Logo" width="300"/>
 
 ## 4.	Conclusión
 
