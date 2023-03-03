@@ -35,7 +35,7 @@ Se recibe la clase Grafo en Java y se deben implementar al menos 3 de los siguie
 
 **Todos los algoritmos están implementados en clases distintas las cuales son representadas con su nombre. Éstas clases cuentan con un main donde se puede ejecutar el código con un grafo de prueba**
 
-### Dijsktra
+### Dijsktra O(V^2) 
 
 Lo primero que se realizó fue la elección de los algoritmos a implementar.
 El primer algoritmo elegido fue el de Dijsktra. Este nos permite encontrar el costo del camino más corto entre un nodo en particular y todos los demás, siempre y cuando exista un camino. Como resultado se obtiene un grafo con los mismos nodos que el proporcionado para analizar, pero solamente con aristas entre el nodo buscado y todos los demás. Se podrá utilizar únicamente con grafos dirigidos y rotulados con costos positivos.
@@ -60,8 +60,8 @@ Por ultimo el resultante de la implementación:
 <img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture3.png" alt="UADE-Logo" width="500"/>
 
 
-### Kruskal
-El segundo algoritmo empleado fue el de Kruskal. Esta técnica nos permite hallar el Árbol de Recubrimiento de Costo Mínimo para un grafo dado partiendo de una lista ordenada de aristas según su costo.
+### Kruksal O(E log (V))
+El segundo algoritmo empleado fue el de Kruksal. Esta técnica nos permite hallar el Árbol de Recubrimiento de Costo Mínimo para un grafo dado partiendo de una lista ordenada de aristas según su costo.
 
 Grafo de prueba:
 
@@ -75,7 +75,7 @@ Vertices y Peso:
 
 <img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture5.png" alt="UADE-Logo" width="120"/>
 
-### BFS
+### BFS  O(V + E)
 Por último, decidimos implementar un algoritmo de BFS (Breadth-First Search) para poner en práctica la técnica de nodos visitados para poder elegir hacia donde dirigir nuestro camino más corto y así obtener el camino más corto desde origen hasta v. Devuelve un print del camino ideal iterando sobre una lista de enteros llamada Recorrido
 
 Grafo de prueba:
