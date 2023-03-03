@@ -4,26 +4,6 @@ import java.util.*;
 
 public class Kruskal {
 
-    public static void main(String[] args) {
-        Arista ar1 = new Arista(1,3,1);
-        Arista ar2 = new Arista(1,2,6);
-        Arista ar3 = new Arista(1,4,5);
-        Arista ar4 = new Arista(2,3,5);
-        Arista ar5 = new Arista(3,4,5);
-        Arista ar6 = new Arista(3,6,4);
-        Arista ar7 = new Arista(3,5,6);
-        Arista ar8 = new Arista(4,6,2);
-        Arista ar9 = new Arista(6,5,6);
-        Arista ar10 = new Arista(5,2,3);
-        List<Arista> aristas = Arrays.asList(ar1,ar2,ar3,ar4,ar5,ar6,ar7,ar8,ar9,ar10);
-        Grafo grafo = new Grafo(6,aristas);
-         Set<Arista> resultado = kruskal(grafo);
-         resultado.forEach(g -> {
-             System.out.println(g.getOrigen() + " " + g.getDestino() + " " + g.getCosto());
-         });
-    }
-
-
     public static Set<Arista> kruskal(Grafo grafo) {
         Set<Arista> arbolRecubrimientoMinimo = new HashSet<>();
         List<Arista> aristasOrdenadasPorCosto = grafo.getAristasOrdenadasPorCosto();
@@ -72,6 +52,26 @@ public class Kruskal {
         }
 
         return arbolRecubrimientoMinimo;
+    }
+
+
+    public static void main(String[] args) {
+        Arista ar1 = new Arista(1,3,1);
+        Arista ar2 = new Arista(1,2,6);
+        Arista ar3 = new Arista(1,4,5);
+        Arista ar4 = new Arista(2,3,5);
+        Arista ar5 = new Arista(3,4,5);
+        Arista ar6 = new Arista(3,6,4);
+        Arista ar7 = new Arista(3,5,6);
+        Arista ar8 = new Arista(4,6,2);
+        Arista ar9 = new Arista(6,5,6);
+        Arista ar10 = new Arista(5,2,3);
+        List<Arista> aristas = Arrays.asList(ar1,ar2,ar3,ar4,ar5,ar6,ar7,ar8,ar9,ar10);
+        Grafo grafo = new Grafo(6,aristas);
+        Set<Arista> resultado = kruskal(grafo);
+        resultado.forEach(g -> {
+            System.out.println(g.getOrigen() + " " + g.getDestino() + " " + g.getCosto());
+        });
     }
 
 
