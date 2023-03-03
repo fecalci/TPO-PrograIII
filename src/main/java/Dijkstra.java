@@ -1,85 +1,91 @@
-package main.java;
-
-//Programa en Java para el algoritmo de Dijkstra que encuentra
-//el camino mas corto para un unico origen
-//Se emplea una matrix de adjacencia para representar el grafo
 public class Dijkstra {
-    // Numero de vertices en el grafo
+    // Número de vértices en el grafo
     static final int V  = 9;
 
-
-    // Funcion utilitaria para encontrar el vertice con la distancia minima,
-// a partir del conjunto de los vertices todavia no incluidos en el
-// camino mas corto
-    private static int minDistance(int[] dist, boolean[] verticeYaProcesado)
+    // Función utilitaria para encontrar el vértice con la distancia mínima,
+    // a partir del conjunto de los vértices todavía no incluidos en el
+    // camino más corto
+    private static int distanciaMinima(int[] dist, boolean[] verticeYaProcesado)
     {
-        // Initialize min value
-        int min = Integer.MAX_VALUE; int min_index=0;
+        // Inicializar el valor mínimo, lo pone en infinito
+        int min = Integer.MAX_VALUE;
+        int minIndice = 0;
 
+        // v tiene que ser menor a número total de vértices
         for (int v = 0; v < V; v++)
+
+            // Si la distancia es menor o igual a infinito y el vértice no fue
+            // procesado aún.
             if (verticeYaProcesado[v] == false && dist[v] <= min) {
+                // min ahora es la distancia mínima almacenada
                 min = dist[v];
-                min_index = v;
+                // Y guarda el índice de la última distancia mínima
+                minIndice = v;
             }
 
-        return min_index;
+        return minIndice;
     }
 
-    // Funcion utilitaria para imprimir el arreglo de distancias calculadas
-    private static void printSolution(int[] dist, int n)
+    // Función las distancias calculadas
+    private static void imprimirSolucion(int[] dist, int n)
     {
-        System.out.println("Distancia del vertice desde el origen\n");
+        String[] letras = {"A", "B","C", "D","F", "G","H", "I","J", "K","L",
+                "M","N", "O","P", "Q","R", "S","T", "U","V", "W","X", "Y","Z"};
+
+        System.out.println("Distancia del vértice desde el origen\n");
         for (int i = 0; i < V; i++)
-            System.out.println(i + " \t\t " + dist[i]);
+            System.out.println(letras[i] + " \t\t " + dist[i]);
     }
 
     private static void dijkstra(int[][] grafo, int src)
-    {
+    {   // Crea dist con la cantidad V de espacios que va a ocupar con 0
         int[] dist = new int[V];
-        // dist[i] guarda la distancia mas corta desde src hasta el vertice i
+        // dist[i] guarda la distancia más corta desde src hasta el vértice i
 
+        // Crea verticeYaProcesado con la cantidad de espacios que va a ocupar V con false
         boolean[] verticeYaProcesado = new boolean[V];
-        //Este arreglo tiene true si el vertice i ya fue procesado
+        // Este arreglo tiene true si el vértice i ya fue procesado
 
-        // Initialize all distances as INFINITE and stpSet[] as false
+        // Inicializa todas las distancias como INFINITO y los vértices como False
         for (int i = 0; i < V; i++) {
             dist[i] = Integer.MAX_VALUE;
             verticeYaProcesado[i] = false;
         }
-        // La distancia del vertice origen hacia el mismo es siempre 0
+        // La distancia del vértice origen hacia el mismo es siempre 0
         dist[src] = 0;
 
-        //Encuentra el camino mas corto para todos los vertices
+        //Encuentra el camino más corto para todos los vértices
         for (int count = 0; count < V-1; count++)
         {
 
-            //Toma el vertice con la distancia minima del cojunto de vertices aun no procesados
-            //En la primera iteracion siempre se devuelve src
-            int u = minDistance(dist, verticeYaProcesado);
+            //Toma el vértice con la distancia mínima del conjunto de vértices aún no procesados
+            //En la primera iteración siempre se devuelve src como true
+            int u = distanciaMinima(dist, verticeYaProcesado);
 
             // Se marca como ya procesado
             verticeYaProcesado[u] = true;
 
-            // Update dist value of the adjacent vertices of the picked vertex.
-            for (int v = 0; v < V; v++){
-                //Se actualiza la dist[v] solo si no esta en verticeYaProcesado, hay un
-                //arco desde u a v y el peso total del camino desde src hasta v a traves de u es
-                // mas pequeno que el valor actual de dist[v]
+            // Actualiza los valores dist de los vértices adyacentes
+            for (int v = 0; v < V; v++)
+                // Se actualiza la dist[v] solo si no está en verticeYaProcesado,
+                // y la distancia es distinta de infinito.
+                // También usa el grafo enviado para verificar si
+                // hay un arco desde u que es la posición de la última
+                // distancia menor a v y el peso total del camino desde src
+                // hasta v, y checkea si es mas chicos que el valor actual de dist[v]
                 if (!verticeYaProcesado[v] && grafo[u][v] > 0 && dist[u] != Integer.MAX_VALUE
                         && dist[u]+grafo[u][v] < dist[v])
                     dist[v] = dist[u] + grafo[u][v];
-            }
         }
 
         // se imprime el arreglo con las distancias
-        printSolution(dist, V);
+        imprimirSolucion(dist, V);
     }
 
-    // driver program to test above function
     public static void main(String[] args)
     {
-        /* Let us create the example graph discussed above */
-        int[][] graph =
+        /* Matriz de Adyacencia */
+        int[][] grafo =
                 {{0, 4, 0, 0, 0, 0, 0, 8, 0},
                         {4, 0, 8, 0, 0, 0, 0, 11, 0},
                         {0, 8, 0, 7, 0, 4, 0, 0, 2},
@@ -91,6 +97,6 @@ public class Dijkstra {
                         {0, 0, 2, 0, 0, 0, 6, 7, 0}
                 };
 
-        dijkstra(graph, 0);
+        dijkstra(grafo, 0);
     }
 }
