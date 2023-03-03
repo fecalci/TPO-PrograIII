@@ -33,6 +33,8 @@ Se recibe la clase Grafo en Java y se deben implementar al menos 3 de los siguie
 
 ## 3.	Desarrollo
 
+** Todos los algoritmos están implementados en clases distintas las cuales son representadas con su nombre. Éstas clases cuentan con un main donde se puede ejecutar el código con un grafo de prueba**
+
 ### Dijsktra
 
 Lo primero que se realizó fue la elección de los algoritmos a implementar.
@@ -69,7 +71,15 @@ Vertices y Peso:
 
 <img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture5.png" alt="UADE-Logo" width="120"/>
 
-Por último, a modo de poner en práctica la técnica de Programación Dinámica, se implementó el algoritmo de Floyd. Con este se obtendrán los caminos más cortos entre todos los pares de vértices. Para utilizar esta técnica, no hay exclusión del tipo de grafo, puede utilizarse tanto para dirigidos como para no dirigidos.
+### BFS
+
+Por último, decidimos implementar un algoritmo de BFS (Breadth-First Search) para poner en práctica la técnica de nodos visitados para poder elegir hacia donde dirigir nuestro camino más corto y así obtener el camino más corto desde origen hasta v.
+Devuelve un print del camino ideal iterando sobre una lista de enteros llamada Recorrido
+
+Grafo de prueba:
+
+
+Resultante:
 
 ## 4.	Conclusión
 
