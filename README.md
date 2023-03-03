@@ -1,8 +1,6 @@
 # Trabajo Práctico - Programación III
 *UADE* - _MRI Pinamar_
 
-<img src="https://www.uade.edu.ar/media/kh1hx5wh/logo_mesa-de-trabajo-1-copia.png" alt="UADE-Logo" width="200"/>
-
 ### Grupo
 
 ### Autores
@@ -13,35 +11,6 @@
 ### Profesor
 * Guillermo Rodriguez
 
-***
-
-
-
-## Índice
-
-- [El proyecto](#el-proyecto)
-  * [Sociedades de Garantías Recíprocas (SGR)](#sociedades-de-garant-as-rec-procas--sgr-)
-  * [Socios Partícipes](#socios-part-cipes)
-  * [Socios Protectores](#socios-protectores)
-  * [De socios postulantes a socios plenos](#de-socios-postulantes-a-socios-plenos)
-  * [Líneas de crédito](#l-neas-de-cr-dito)
-  * [Solicitud de Garantías](#solicitud-de-garant-as)
-  * [Operatoria diaria](#operatoria-diaria)
-  * [Riesgo vivo de un socio vs utilizado de línea](#riesgo-vivo-de-un-socio-vs-utilizado-de-l-nea)
-  * [Desembolsos y recuperos](#desembolsos-y-recuperos)
-- [Reglas de negocio](#reglas-de-negocio)
-- [Consultas generales](#consultas-generales)
-- [Módulos a entregas](#m-dulos-a-entregas)
-- [Módulos por cantidad de integrantes](#m-dulos-por-cantidad-de-integrantes)
-- [Documentación y fases de entrega](#documentaci-n-y-fases-de-entrega)
-- [Pautas para la aprobación de las entregas](#pautas-para-la-aprobaci-n-de-las-entregas)
-- [Pautas para la Aprobación del Trabajo Práctico Cuatrimestral](#pautas-para-la-aprobaci-n-del-trabajo-pr-ctico-cuatrimestral)
-- [Cronograma de entregas y entregables](#cronograma-de-entregas-y-entregables)
-
-
-
-
-
 
 ***
 
@@ -49,7 +18,7 @@
 
 A continuación, se presenta el trabajo practico obligatorio correspondiente a la materia Programación III cursada bajo la modalidad de intensiva en el campus de UADE – Costa Argentina. En el informe se detallarán las pautas del trabajo y se hará entrega de los archivos con los recursos correspondientes.
 
-### 2.	Objetivo
+## 2.	Objetivo
 
 El objetivo del trabajo consiste en aplicar algunos de los conceptos teóricos que se vieron durante la cursada e implementarlos en un entorno de desarrollo para asentar la compresión de lo visto en clase. 
 
@@ -62,7 +31,9 @@ Se recibe la clase Grafo en Java y se deben implementar al menos 3 de los siguie
 *	Algoritmo de Dijsktra
 *	Algoritmo de Floyd
 
-### 3.	Desarrollo
+## 3.	Desarrollo
+
+### Dijsktra
 
 Lo primero que se realizó fue la elección de los algoritmos a implementar.
 El primer algoritmo elegido fue el de Dijsktra. Este nos permite encontrar el costo del camino más corto entre un nodo en particular y todos los demás, siempre y cuando exista un camino. Como resultado se obtiene un grafo con los mismos nodos que el proporcionado para analizar, pero solamente con solamente con aristas entre el nodo buscado y todos los demás. Se podrá utilizar únicamente con grafos dirigidos y rotulados con costos positivos.
@@ -71,159 +42,37 @@ El primer algoritmo elegido fue el de Dijsktra. Este nos permite encontrar el co
 La función desarrollada para recibir una Matriz de Adyacencia de 9x9:
 
 
-### Líneas de crédito
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture1.png" alt="UADE-Logo" width="500"/>
 
-Cuando una empresa se convierte en socio partícipe se le asigna una línea de crédito por un monto a determinar. Las líneas de crédito tienen fecha de vigencia por lo que un socio con una línea vencida no puede operar.
-Cuando una línea es aprobada se la vincula con qué tipo de operaciones puede operar la empresa. Los tipos de operaciones son:
+Matriz graficada:
 
-**Tipo 1:**
-* Cheques propios
-* Cheques de terceros
-* Pagaré Bursatil
 
-**Tipo 2:**
-* Cuentas corrientes Comerciales
-* Tarjetas de crédito
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture2.png" alt="UADE-Logo" width="500"/>
 
-**Tipo 3:**
-* Préstamos
+Por ultimo el resultante de la implementación:
 
-Para operar por el total de la línea asignada la empresa debe presentar contragarantías para poder operar.
-Los tipos de contragarantías son:
-* Fianza Personal
-* Hipotecas
-* Pagaré
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture3.png" alt="UADE-Logo" width="500"/>
 
-Una empresa que quiera realizar una operación sólo podrá hacerlo por el total de contragarantías presentadas. En caso en que las contragarantías presentadas superen el total de la línea asignada, el total de la línea operará como tope de operación.
 
-### Solicitud de Garantías
+### Kruskal
+El segundo algoritmo empleado fue el de Kruskal. Esta técnica nos permite hallar el Árbol de Recubrimiento de Costo Mínimo para un grafo dado partiendo de una lista ordenada de aristas según su costo.
 
-Cuando un socio solicita realizar una operación debe presentar cierta información según el tipo: 
-* **Cheques:**
-  - Banco del cheque 
-  - Número de cheque 
-  - Fecha de vencimiento
-  - CUIT del Firmante 
-* **Cuentas corrientes Comerciales**
-  - Empresa con la que tendrá cuenta corriente
-  - Importe total
-  - Fecha de vencimiento 
-* **Préstamos**
-  - Banco donde se solicita el préstamo
-  - Importe Total
-  - Tasa
-  - Fecha de acreditación
-  - Cantidad de cuotas
-  - Sistema (Francés/Alemán/Americano)
+Grafo de prueba:
 
-### Operatoria diaria
 
-Todas las operaciones se cargan en un estado inicial que es “ingresado”. Si la operación puede cursarse por la línea asignada, se le emite un certificado de garantía a nombre del socio y la operación cambia de estado a “Con certificado emitido”. El número de certificado de garantía es un dato fundamental para identificar la operación. 
- 
-A diferencia de los préstamos y las cuentas corrientes comerciales, las operaciones de cheques son cheques cuyo beneficiario es el propio socio que decide negociarlos antes de la fecha de vencimiento. Los cheques se presentan en el mercado Argentino de Valores y se venden con una “tasa de descuento” que es el % que le quitan al importe del cheque por cobrarlo con anterioridad al vencimiento. 
- 
-Si la operación presentada prospera en el mercado o banco y el socio recibe el dinero la operación pasa a estado “Monetizado” y se le calcula una comisión al socio. 
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture4.png" alt="UADE-Logo" width="400"/>
 
-Las comisiones se calculan según la siguiente tabla:
 
-| Tipo de operación | Comisión |
-| :---------------: | :------: |
-| **1** | 3% |
-| **2** | 3% |
-| **3** | 4% |
+Resultante:
+Vertices y Peso:
 
-Cada comisión se crea con un estado inicial de “calculada” que sólo cambia a “facturada” al momento de emitir una factura a nombre del socio lo cual suele ocurrir el primer día hábil de la semana. 
- 
-Cada cambio de estado en socios, documentación, operaciones, etc debe ser identificada con la fecha en que se realiza el cambio, estado anterior, estado nuevo, una referencia (con tipo) y quien realizó el cambio. 
 
-### Riesgo vivo de un socio vs utilizado de línea
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture5.png" alt="UADE-Logo" width="120"/>
 
-El riesgo vivo de un socio son todas las operaciones monetizadas aún no vencidas. El riesgo vivo se compone por: 
-* **Operaciones tipo 1:** Importe total de la operación.
-* **Operaciones tipo 2:** Importe utilizado.
-* **Operaciones tipo 3:** Cuotas impagas
+Por último, a modo de poner en práctica la técnica de Programación Dinámica, se implementó el algoritmo de Floyd. Con este se obtendrán los caminos más cortos entre todos los pares de vértices. Para utilizar esta técnica, no hay exclusión del tipo de grafo, puede utilizarse tanto para dirigidos como para no dirigidos.
 
-El utilizado de la línea se compone por todas las operaciones con certificado emitido más el riesgo vivo del socio.
+## 4.	Conclusión
 
-### Desembolsos y recuperos
+En el trabajo se destacan algoritmos que sirven para realizar operaciones de distinto tipo sobre grafos. Tanto Dijkstra como Floyd nos sirven para hallar los caminos más cortos pero a su vez tienen su diferencia, uno lo hace desde un vértice a todos y el último mencionado sirve para todos los pares de vértices. Por otra parte, elegimos Kruskal cómo la técnica para hallar el ARMC.
 
-Cuando un socio no cubre alguna de las operaciones que presentó, la que paga la deuda es la SGR. Luego, el socio adquiere una deuda con la SGR que debe cancelar. La cancelación de los desembolsos hechos por la SGR puede se realizan mediante lo que se denominan recuperos y pueden ser parciales o totales. La SGR puede optar por cobrar un monto por mora o no.
-
-## Reglas de negocio
-
-* Ningún socio puede operar por más del 5% del FDR
-* La SGR no puede recibir más del 5% del FDR en cheques de un mismo firmante
-* Ningún socio puede operar si debe facturas por más del 10% del total de la línea asignada
-* Ningún socio puede operar con desembolsos no cubiertos
-* Un socio no puede ser aprobado como protector si es accionista de una empresa socia partícipe de la SGR
-* Su una empresa comparte accionistas con otra empresa el total computado para el 5% del FDR es la suma de los riesgos vivos de ambas empresas
-
-## Consultas generales
-
-* Total de comisiones calculadas en un día por operaciones de cheques presentadas en el Mercado Argentino de Valores 
-* Las operaciones avaladas a nombre de un socio, en estado monetizadas en un período de tiempo 
-* Valor promedio de la tasa de descuento y total operado de cheques y pagarés para un tipo de empresa (pequeña, mediana, grande), en un período de tiempo 
-* Consulta porcentaje de comisión a calcularle a un socio por un tipo de operación pasada por parámetros 
-* Consulta de saldo mora. Mora de un socio por día.
-* Consulta consolidada de un socio. Consultas riesgo vivo y total de utilizado. Total y detalle. Contragarantias.
-
-## Módulos a entregas
-
-* Socios
-  - Documentación
-  - Accionistas
-* Líneas y tipos de operaciones asociadas
-  - Contragarantías
-* Operaciones
-  - Cheques y pagarés
-  - Cuentas corrientes comerciales y tarjetas de crédito
-  - Préstamos
-* Desembolsos y recuperos
-  - Administración y consultas
-* Consultas generales
-
-## Módulos por cantidad de integrantes
-
-Los grupos con 4 integrantes están eximidos de entregar:
-* Desembolsos y recuperos
-* Contragarantías
-* Consultas de saldo Mora
-
-Los grupos con 5 integrantes están eximidos de entregar:
-* Recuperos
-* Contragarantías
-
-Los grupos con 6 integrantes están eximidos de entregar:
-* Recuperos
-
-La no entrega de un módulo exime, también, la entrega la parte del modelo y diagrama de secuencia asociado.
-
-## Documentación y fases de entrega
-
-Se pide documentar el diseño del sistema e implementar en base a las siguientes fases:
-* **Primera Fase:** Diagrama de clases.
-* **Segunda Fase:** Diagrama de secuencias de todas las reglas de negocios y consultas generales
-* **Tercera Fase:** Sistema funcionando
-
-## Pautas para la aprobación de las entregas
-
-1.	Todas las entregas deberán tener una carátula indicando nombre de integrantes, fecha y número de entrega.
-2.	Las entregas deben subirse al grupo creado en la plataforma webcampus.
-3.	Incorporar entregas anteriores con correcciones si corresponde
-4.	Respetar la fecha de entrega indicada por la cátedra.
-5.	**Se considera desaprobada la entrega que no cumple alguna de las consignas anteriores**
-
-## Pautas para la Aprobación del Trabajo Práctico Cuatrimestral
-
-1.	Cumplir con todas las entregas definidas por la cátedra en la fecha establecida.
-2.	Aprobar todas las entregas definidas por la cátedra.
-3.	Respetar las consignas solicitadas y el orden definido.
-
-## Cronograma de entregas y entregables
-
-* Primera entrega: **15-16/SEP/2020**
-  - Primera fase completa
-* Segunda entrega: **27-28/OCT/2020**
-  - Segunda fase completa
-* Entrega Final: **17-18/NOV/2020**
-
+## 5.	Anexos
