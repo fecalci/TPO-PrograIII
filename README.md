@@ -1,5 +1,5 @@
 # Trabajo Práctico - Programación III
-*UADE* - _MRI Pinamar_
+*UADE* - _MRI Pinamar_2023
 
 ### Grupo
 
@@ -85,10 +85,10 @@ Grafo de prueba:
 
 Resultante:
 
-<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture6.png" alt="UADE-Logo" width="120"/>
+<img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture7.jpeg" alt="UADE-Logo" width="200"/>
 
 ## 4.	Conclusión
 
-En el trabajo se destacan algoritmos que sirven para realizar operaciones de distinto tipo sobre grafos. Tanto Dijkstra como Floyd nos sirven para hallar los caminos más cortos pero a su vez tienen su diferencia, uno lo hace desde un vértice a todos y el último mencionado sirve para todos los pares de vértices. Por otra parte, elegimos Kruskal cómo la técnica para hallar el ARMC.
+En el trabajo se destacan algoritmos que sirven para realizar operaciones de distinto tipo sobre grafos. Tanto Dijkstra. Por otra parte, elegimos Kruskal cómo la técnica para hallar el ARMC.
 
 ## 5.	Anexos
