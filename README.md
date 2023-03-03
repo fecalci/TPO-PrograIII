@@ -33,7 +33,7 @@ Se recibe la clase Grafo en Java y se deben implementar al menos 3 de los siguie
 
 ## 3.	Desarrollo
 
-** Todos los algoritmos están implementados en clases distintas las cuales son representadas con su nombre. Éstas clases cuentan con un main donde se puede ejecutar el código con un grafo de prueba**
+**Todos los algoritmos están implementados en clases distintas las cuales son representadas con su nombre. Éstas clases cuentan con un main donde se puede ejecutar el código con un grafo de prueba**
 
 ### Dijsktra
 
