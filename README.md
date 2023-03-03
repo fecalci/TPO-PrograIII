@@ -89,6 +89,7 @@ Resultante:
 
 ## 4.	Conclusión
 
-En el trabajo se destacan algoritmos que sirven para realizar operaciones de distinto tipo sobre grafos. Tanto Dijkstra. Por otra parte, elegimos Kruskal cómo la técnica para hallar el ARMC.
+En conclusión, el análisis de grafos mediante algoritmos de Kruksal, BFS y Dijkstra es esencial en aplicaciones de optimización de recursos y minimización de costos.
+Los algoritmos Dijkstra, Kruskal y BFS son eficientes y rápidos en la búsqueda de grafos. Dijkstra encuentra la ruta más corta, pero solo funciona en grafos con pesos positivos. Kruskal produce resultados óptimos, pero puede ser lento en grafos grandes. BFS es eficiente en grafos no ponderados, pero no es adecuado para encontrar la ruta más corta.
 
 ## 5.	Anexos
