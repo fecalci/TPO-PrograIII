@@ -5,7 +5,7 @@
 
 ### Autores
 * Federico Calciano LU - 1115436
-* Juan Cruz Lafranconi LU - 1115326
+* Juan Cruz Lafranconi LU - 1115435
 * Lucas Gioffre LU - 1038885
 
 ### Profesor
