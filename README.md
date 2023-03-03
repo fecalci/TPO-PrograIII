@@ -5,7 +5,7 @@
 
 ### Autores
 * Federico Calciano LU - 1115436
-* Juan Cruz Lafranconi LU - 1115326
+* Juan Cruz Lafranconi LU - 1115435
 * Lucas Gioffre LU - 1038885
 
 ### Profesor
@@ -33,10 +33,16 @@ Se recibe la clase Grafo en Java y se deben implementar al menos 3 de los siguie
 
 ## 3.	Desarrollo
 
+**Todos los algoritmos están implementados en clases distintas las cuales son representadas con su nombre. Éstas clases cuentan con un main donde se puede ejecutar el código con un grafo de prueba**
+
 ### Dijsktra
 
 Lo primero que se realizó fue la elección de los algoritmos a implementar.
-El primer algoritmo elegido fue el de Dijsktra. Este nos permite encontrar el costo del camino más corto entre un nodo en particular y todos los demás, siempre y cuando exista un camino. Como resultado se obtiene un grafo con los mismos nodos que el proporcionado para analizar, pero solamente con solamente con aristas entre el nodo buscado y todos los demás. Se podrá utilizar únicamente con grafos dirigidos y rotulados con costos positivos.
+El primer algoritmo elegido fue el de Dijsktra. Este nos permite encontrar el costo del camino más corto entre un nodo en particular y todos los demás, siempre y cuando exista un camino. Como resultado se obtiene un grafo con los mismos nodos que el proporcionado para analizar, pero solamente con aristas entre el nodo buscado y todos los demás. Se podrá utilizar únicamente con grafos dirigidos y rotulados con costos positivos.
+
+El algoritmo implementado recibe una matriz de adyacencia llamada grafo y el nodo de origen llamado src. Crea un array ***dist*** donde va aguardar los pesos de las distancias y un array de booleanos ***verticeYaProcesado***, que tiene flags que nos permiten recorrer el grafo. Solo cuando nos paramos sobre el vertice y analizamos sus adyacentes lo pasamos a true.
+
+Primero inicializamos todas las instancias de ***dist*** y ***verticeYaProcesado***, con infinito y false. Para poder empezar a recorrer los arrays con un for. Dentro del mismo se calcula la distancia minima del vertice adyacente. Una vez que recibimos el vertice mas cercano, lo seteamos a true y entramos a un for más en el que actualizamos los valores de ***dist*** de los vértices adyacentes. Para finalizar se imprime ***dist*** con las distancias.
 
 
 La función desarrollada para recibir una Matriz de Adyacencia de 9x9:
@@ -69,7 +75,12 @@ Vertices y Peso:
 
 <img src="https://github.com/fecalci/TPO-PrograIII/blob/main/Picture5.png" alt="UADE-Logo" width="120"/>
 
-Por último, a modo de poner en práctica la técnica de Programación Dinámica, se implementó el algoritmo de Floyd. Con este se obtendrán los caminos más cortos entre todos los pares de vértices. Para utilizar esta técnica, no hay exclusión del tipo de grafo, puede utilizarse tanto para dirigidos como para no dirigidos.
+### BFS
+Por último, decidimos implementar un algoritmo de BFS (Breadth-First Search) para poner en práctica la técnica de nodos visitados para poder elegir hacia donde dirigir nuestro camino más corto y así obtener el camino más corto desde origen hasta v. Devuelve un print del camino ideal iterando sobre una lista de enteros llamada Recorrido
+
+Grafo de prueba:
+
+Resultante:
 
 ## 4.	Conclusión
 
